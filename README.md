@@ -6,5 +6,5 @@ language. Within each folder you will find the different example Applications.
 
 ## List of Applications
 
-* Simple ETL Application ([Python](python/ETL/README.md)/[Scala](scala/ETL/README.md))
+* Simple ETL Application ([Python](python/ETL/README.md) / [Scala](scala/ETL/README.md))
 * Interactive Data Application based on Plotly ([Python](python/Plotly/README.md))

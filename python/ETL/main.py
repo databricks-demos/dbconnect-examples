@@ -6,7 +6,7 @@ import transformations as trans
 
 
 def main():
-  c = Config(profile="integ", cluster_id="0105-123836-uaih6uzs")
+  c = Config(profile="PROFILE", cluster_id="CLUSTER")
   spark = SparkSession.builder.sdkConfig(c).getOrCreate()
   print(spark.range(100).collect())
 

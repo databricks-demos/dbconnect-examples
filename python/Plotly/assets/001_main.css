@@ -1,0 +1,5 @@
+body {
+    /*background-image: linear-gradient(to right top, #1b3139, #164472, #754293, #d41677, #ff3621);*/
+    background-image: linear-gradient(to right top, #ff7474, #ff8673, #ff9775, #ffa87a, #ffb883, #ffbf98, #ffc7ad, #ffd0c0, #ffdadb, #ffe6f0, #fbf3fb, #ffffff);
+    font-family: 'Inter', sans-serif;
+}

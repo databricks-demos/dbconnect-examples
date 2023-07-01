@@ -8,3 +8,4 @@ language. Within each folder you will find the different example Applications.
 
 * Simple ETL Application ([Python](python/ETL/README.md) / [Scala](scala/ETL/README.md))
 * Interactive Data Application based on Plotly ([Python](python/Plotly/README.md))
+* Interactive Data Application based on Plotly and PySpark AI([Python](python/Plotly-AI/README.md))

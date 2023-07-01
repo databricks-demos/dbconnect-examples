@@ -1,0 +1,4 @@
+dash
+plotly
+databricks-connect>=13.0.0
+pyspark-ai

@@ -1,6 +1,6 @@
 # Example charting application (Scala)
 
-This simple application makes few charts based on remote server response.
+This simple application visualizes taxi trips data using remote server queries.
 
 The visualization is done using popular library [JFreeChart](https://www.jfree.org/jfreechart/)
 

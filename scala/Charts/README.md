@@ -1,7 +1,9 @@
-# Example JFreeCharts Application (Scala)
+# Example charting application (Scala)
 
-This is a sample application which makes a chart based on remote server response.
-The application uses the existing Databricks sample datasets.
+This simple application makes few charts based on remote server response.
+
+The visualization is done using popular library [JFreeChart](https://www.jfree.org/jfreechart/)
+
 
 ## Getting started
 
@@ -9,7 +11,7 @@ The application uses the existing Databricks sample datasets.
 2. To run, make sure to set the environment variables for `DATABRICKS_HOST`,
 `DATABRICKS_TOKEN`, `DATABRICKS_CLUSTER_ID`.
 Alternatively, please see [docs](https://docs.databricks.com/en/dev-tools/databricks-connect-ref.html#set-up-the-client)
-for other ways to set up the client.
+for other ways to configure connection with server.
 
 ## Plots
 

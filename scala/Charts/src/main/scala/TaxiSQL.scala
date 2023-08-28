@@ -1,10 +1,11 @@
-import com.databricks.connect.DatabricksSession
-import org.apache.spark.sql.SparkSession
-import org.jfree.chart.{ChartFactory, ChartFrame, ChartUtils}
-import org.jfree.data.category.DefaultCategoryDataset
 import java.io.File
 
-object Taxi {
+import com.databricks.connect.DatabricksSession
+import org.apache.spark.sql.SparkSession
+import org.jfree.chart.{ChartFactory, ChartFrame, ChartUtils, JFreeChart}
+import org.jfree.data.category.DefaultCategoryDataset
+
+object TaxiSQL {
   def createSession(): SparkSession = {
     DatabricksSession.builder.remote().getOrCreate()
   }
@@ -22,7 +23,7 @@ object Taxi {
         ORDER BY 1
         """).collect()
 
-    val dataset = new DefaultCategoryDataset();
+    val dataset = new DefaultCategoryDataset()
     data.foreach(row => dataset.addValue(row(1).asInstanceOf[Long], "Trips", row(0).toString))
 
     val chart = ChartFactory.createBarChart("Number of trips per hour",
@@ -30,7 +31,12 @@ object Taxi {
       "hour",
       dataset)
 
-    ChartUtils.saveChartAsPNG(new File("plot.png"), chart, 600, 500);
+    showChart(chart, Some("trips_by_hour.png"))
+  }
+
+  def showChart(chart: JFreeChart, saveTo: Option[String]): Unit = {
+    saveTo.foreach(s => ChartUtils.saveChartAsPNG(new File(s), chart, 600, 500))
+
     val frame = new ChartFrame("Results", chart)
     frame.setSize(600, 500)
     frame.setVisible(true)

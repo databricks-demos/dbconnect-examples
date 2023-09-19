@@ -7,8 +7,5 @@ lazy val root = (project in file("."))
     name := "Charts"
   )
 
-resolvers += "DB Connect Staging" at "https://previewstoragespark.blob.core.windows.net/privatepreviewdbconnect/20230810_DBConnectv2_Scala/dbconnect-staging"
-resolvers += "Apache Development Snapshot Repository" at "https://repository.apache.org/content/repositories/snapshots/"
-
-libraryDependencies += "com.databricks.connect" % "dbconnect" % "13.3.0-SNAPSHOT"
+libraryDependencies += "com.databricks" % "databricks-connect" % "13.3.0"
 libraryDependencies += "org.jfree" % "jfreechart" % "1.5.4"

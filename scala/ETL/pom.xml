@@ -43,19 +43,9 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-    <groupId>org.apache.spark</groupId>
-    <artifactId>spark-common-utils_2.12</artifactId>
-    <version>3.5.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.spark</groupId>
-      <artifactId>spark-catalyst_2.12</artifactId>
-      <version>3.5.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.spark</groupId>
-      <artifactId>spark-connect-client-jvm_2.12</artifactId>
-      <version>3.5.0-SNAPSHOT</version>
+      <groupId>com.databricks</groupId>
+      <artifactId>databricks-connect</artifactId>
+      <version>[13.3.0, 14.0.0)</version>
     </dependency>
   </dependencies>
 

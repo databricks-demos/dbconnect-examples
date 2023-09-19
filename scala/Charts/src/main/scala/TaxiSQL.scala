@@ -31,7 +31,7 @@ object TaxiSQL {
       "hour",
       dataset)
 
-    showChart(chart, Some("trips_by_hour.png"))
+    showChart(chart, Some("pics/trips_by_hour.png"))
   }
 
   def showChart(chart: JFreeChart, saveTo: Option[String]): Unit = {

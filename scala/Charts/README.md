@@ -1,4 +1,4 @@
-# Example charting application (Scala)
+# Charts using DBConnect (Scala) and JFreeChart
 
 This simple application visualizes taxi trips data using remote server queries.
 
@@ -17,8 +17,8 @@ for other ways to configure connection with server.
 
 The application produces the following plots
 
-![Number of trips per hour](/scala/Charts/pics/trips_by_hour.png)
+![Number of trips per hour](pics/trips_by_hour.png)
 
-![Fraction of local trips](/scala/Charts/pics/localtrips.png)
+![Fraction of local trips](pics/localtrips.png)
 
-![Number of trips per day](/scala/Charts/pics/trips_per_day.png)
+![Number of trips per day](pics/trips_per_day.png)

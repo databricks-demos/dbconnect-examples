@@ -44,7 +44,7 @@ object TaxiSpark {
     dateAxis.setDateFormatOverride(new SimpleDateFormat("dd-MM-yyyy"))
     plot.setDomainAxis(dateAxis)
 
-    showChart(chart, Some("trips_per_day.png"))
+    showChart(chart, Some("pics/trips_per_day.png"))
   }
 
   def local_trips(spark: SparkSession): Unit = {
@@ -63,7 +63,7 @@ object TaxiSpark {
     val chart = ChartFactory.createPieChart("Fraction of local trips",
       dataset)
 
-    showChart(chart, Some("localtrips.png"))
+    showChart(chart, Some("pics/localtrips.png"))
   }
 
   def showChart(chart: JFreeChart, saveTo: Option[String]): Unit = {

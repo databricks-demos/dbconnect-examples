@@ -1,13 +1,19 @@
-from databricks.connect import DatabricksSession as SparkSession
-from databricks.sdk.core import Config
+from databricks.connect import DatabricksSession
 
 import transformations as trans
 
-
-
 def main():
-  c = Config(profile="PROFILE", cluster_id="CLUSTER")
-  spark = SparkSession.builder.sdkConfig(c).getOrCreate()
+  # For more detail on configuring the connection properties for your
+  # Databricks workspace please refer to this documentation:
+  # https://docs.databricks.com/en/dev-tools/databricks-connect/python/install.html#configure-connection-python
+
+  # If you have a default profile set in your .databrickscfg no additional code
+  # changes are needed.
+  spark = DatabricksSession.builder.serverless().getOrCreate()
+
+  # Alternate way to configure your Spark session:
+  # spark = DatabricksSession.builder.profile("PROFILE").clusterId("CLUSTER_ID").getOrCreate()
+
   print(spark.range(100).collect())
 
   # Step 1 - Load the Bronze Tables

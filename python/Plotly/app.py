@@ -3,8 +3,7 @@ from dash import Dash, html, dcc, Output, Input
 import plotly.express as px
 
 # PySpark and databricks-connect related imports.
-from databricks.connect.session import DatabricksSession as SparkSession
-from databricks.sdk import WorkspaceClient
+from databricks.connect.session import DatabricksSession
 from pyspark.sql.functions import col
 from pyspark.sql.types import StringType
 import pyspark.sql.functions as F
@@ -32,7 +31,7 @@ app.layout = html.Div(
             children="NYC Taxi Cockpit: Plotly x Databricks Demo",
         ),
         html.P(
-            """This is a sample application to show-case how easy it is to get started with 
+            """This is a sample application to show-case how easy it is to get started with
             Databricks Connect and build interactive Python applications. The dataset used for
             this application is the standard Databricks samples dataset. All you need to get
             started is a Databricks cluster and this simple application.""",
@@ -117,7 +116,7 @@ def update_output(zip_plot, column_map_show):
                                 zoom=9, center={"lat": 40.7, "lon": -73.9},
                                 opacity=0.7,
                                 hover_name="zip_code"
-                                )                
+                                )
                 """,
                             className="text-xs border-solid border-2 border-slate-400 rounded bg-slate-200 p-4 overflow-scroll",
                             id="code-hl",
@@ -175,9 +174,16 @@ def update_trip_count(greaterThan):
     ],
 )
 
-config = WorkspaceClient(profile="PROFILE", cluster_id="CLUSTER_ID").config
-spark = SparkSession.builder.sdkConfig(config).getOrCreate()
+# For more detail on configuring the connection properties for your
+# Databricks workspace please refer to this documentation:
+# https://docs.databricks.com/en/dev-tools/databricks-connect/python/install.html#configure-connection-python
 
+# If you have a default profile set in your .databrickscfg no additional code
+# changes are needed.
+spark = DatabricksSession.builder.serverless().getOrCreate()
+
+# Alternate way to configure your Spark session:
+# spark = DatabricksSession.builder.profile("PROFILE").clusterId("CLUSTER_ID").getOrCreate()
 
 @app.callback(Output("postcode-trip-count", "figure"), Input("count-input", "value"))
 def update_trip_count(greaterThan):

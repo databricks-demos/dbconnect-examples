@@ -17,11 +17,11 @@ All you need to get started is a Databricks cluster and this simple Python
 application. The dataset used in this application is the standard Databricks `samples`
 dataset.
 
-To get started, create a new virtual environment and install the reuired
+To get started, create a new virtual environment and install the required
 dependencies
 
 ```commandline
-pip instal -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ```python
@@ -49,7 +49,7 @@ python app.py
 ## Dependencies
 
 This sample application is meant for illustration purposes only. The
-application uses the follwing third-party dependencies:
+application uses the following third-party dependencies:
 
   * Plotly / Dash - https://github.com/plotly/dash - The MIT License (MIT)
   * Tailwind CSS - https://github.com/tailwindlabs/tailwindcss - - The MIT License (MIT)

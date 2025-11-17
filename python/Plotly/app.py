@@ -242,4 +242,4 @@ def update_output(zip_plot, column_map_show):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run(debug=True)
